@@ -1,6 +1,6 @@
 'use client';
-import { log } from "console";
-import { useCallback, useEffect, useState } from "react";
+
+import { useEffect, useState } from "react";
 import { FaXmark } from "react-icons/fa6";
 
 interface ModalProps {
@@ -21,18 +21,16 @@ const Modal = (
     }, [isOpen]);
 
     // console.log(showModal);
-    
 
-    const handleClose = useCallback(() => {
+
+    const handleClose = () => {
         setShowModal(false);
 
         setTimeout(() => {
             close?.();
         }, 300);
-    }, [close])
+    }
 
-    console.log(handleClose);
-    
 
     if (!isOpen) {
         return null;

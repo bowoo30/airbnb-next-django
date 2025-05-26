@@ -1,24 +1,22 @@
 'use client';
+
 interface MenuLinkProps {
-    label: Array<{
-        label: string,
-        link: string,
-        onclick?: () => void
-    }>;
+    label: string;
+    onClick: () => void;
 }
 
-const MenuLinks = (
-    { label }: MenuLinkProps
-) => {
+const MenuLink: React.FC<MenuLinkProps> = ({
+    label,
+    onClick
+}) => {
     return (
-        <>
-            {label.map((label, index) => (
-                <div key={index} onClick={label.onclick} className="cursor-pointer block px-4 py-2 hover:bg-gray-100 rounded-xl transition">
-                    {label.label}</div>
-            ))
-            }
-        </>
-    );
+        <div 
+            onClick={onClick}
+            className="px-5 py-4 cursor-pointer hover:bg-gray-100 transition"
+        >
+            {label}
+        </div>
+    )
 }
 
-export default MenuLinks;
+export default MenuLink;

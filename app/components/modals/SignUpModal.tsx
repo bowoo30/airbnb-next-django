@@ -1,10 +1,11 @@
 'use client'
-import { useLoginModal } from "@/app/hooks/useLoginModal";
+
+import { useSignUpModal } from "@/app/hooks/useSignUpModal";
 import Modal from "./Modal";
 import CustomButton from "../forms/Custombutton";
 
-const LoginModal = () => {
-    const loginModal = useLoginModal();
+const SignUpModal = () => {
+    const SignUpModal = useSignUpModal();
 
     const content = (
         <>
@@ -22,12 +23,15 @@ const LoginModal = () => {
             </form>
         </>
     )
+
     return (
         <Modal
-            isOpen={loginModal.isOpen} label="Login"
+            isOpen={SignUpModal.isOpen}
+            label="Sign Up"
+            close={SignUpModal.onClose}
             content={content}
-            close={loginModal.onClose} />
+        />
     );
 }
 
-export default LoginModal;
+export default SignUpModal;

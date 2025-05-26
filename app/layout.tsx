@@ -3,6 +3,7 @@ import { Geist, Manrope } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
 import LoginModal from "./components/modals/LoginModal";
+import SignUpModal from "./components/modals/SignUpModal";
 
 
 const geistSans = Geist({
@@ -41,7 +42,9 @@ export default function RootLayout({
         <div className="pt-25">
           {children}
         </div>
+
         <LoginModal />
+        <SignUpModal/>
       </body>
     </html>
   );
